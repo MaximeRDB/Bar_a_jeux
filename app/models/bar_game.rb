@@ -1,0 +1,2 @@
+class BarGame < ApplicationRecord
+end
