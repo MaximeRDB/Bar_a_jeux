@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_22_121108) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_22_131644) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bar_games", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "bar_id", null: false
+    t.bigint "game_id", null: false
+    t.index ["bar_id"], name: "index_bar_games_on_bar_id"
+    t.index ["game_id"], name: "index_bar_games_on_game_id"
+  end
 
   create_table "bars", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -63,6 +73,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_121108) do
     t.string "phone_number"
   end
 
+  add_foreign_key "bar_games", "bars"
+  add_foreign_key "bar_games", "games"
   add_foreign_key "bookings", "games"
   add_foreign_key "bookings", "users"
   add_foreign_key "games", "bars"
