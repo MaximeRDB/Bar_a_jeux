@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_22_120822) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_22_121108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120822) do
     t.integer "minimum_players"
     t.integer "maximum_players"
     t.integer "rentale_price_cents"
+    t.bigint "bar_id", null: false
+    t.index ["bar_id"], name: "index_games_on_bar_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +65,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120822) do
 
   add_foreign_key "bookings", "games"
   add_foreign_key "bookings", "users"
+  add_foreign_key "games", "bars"
 end
