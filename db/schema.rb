@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_22_115129) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_22_120822) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_115129) do
     t.datetime "updated_at", null: false
     t.datetime "start_date"
     t.datetime "end_date"
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["game_id"], name: "index_bookings_on_game_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -57,4 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_115129) do
     t.string "phone_number"
   end
 
+  add_foreign_key "bookings", "games"
+  add_foreign_key "bookings", "users"
 end
