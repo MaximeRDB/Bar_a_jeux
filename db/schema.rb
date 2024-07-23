@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_22_134652) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_23_134213) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_134652) do
     t.integer "minimum_players"
     t.integer "maximum_players"
     t.integer "rentale_price_cents"
+    t.string "image_link"
   end
 
   create_table "users", force: :cascade do |t|
