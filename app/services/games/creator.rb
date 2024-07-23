@@ -1,4 +1,4 @@
-module Game
+module Games
   class Creator
 
     require "open-uri"
