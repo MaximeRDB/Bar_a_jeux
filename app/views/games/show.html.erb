@@ -1,5 +1,6 @@
 <div class="card-product">
-  <img src="https://cf.geekdo-images.com/BZiR636JJdSBwThtH42DVw__opengraph/img/_Iu_09Ab0fvnTJT3gBCfud0LbJg=/0x0:800x420/fit-in/1200x630/filters:strip_icc()/pic3744052.jpg" />
+  <% src = @game.image_link ? @game.image_link : "https://cf.geekdo-images.com/BZiR636JJdSBwThtH42DVw__opengraph/img/_Iu_09Ab0fvnTJT3gBCfud0LbJg=/0x0:800x420/fit-in/1200x630/filters:strip_icc()/pic3744052.jpg"%>
+  <img src=<%= src %>>
   <div class="card-product-infos">
     <h1><%= @game.name %></h1>
     <p>

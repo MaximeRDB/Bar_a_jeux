@@ -17,7 +17,12 @@ end
   end
 
   def create
-    @game = Game.new(game_params)
+    if game_params[:barcode].present?
+     @game = Games::Creator.new(game_params[:barcode]).call
+    else
+      @game = Game.new(game_params)
+    end
+
     if @game.save!
       redirect_to @game
     else
@@ -27,15 +32,18 @@ end
 
   def update
     respond_to do |format|
-      if @game.update!(description: game_params[:description])
-              format.html { redirect_to(@game,
-              :notice => "Game description was successfully updated.") }
+      if @game.update!(
+        description: game_params[:description],
+        name: game_params[:name],
+        image_link: game_params[:image_link])
+
+          format.html { redirect_to(@game,
+          :notice => "Game description was successfully updated.") }
       end
     end
   end
 
   def destroy
-    p 'HERE ============='
     @game.destroy
     redirect_to root_path, :notice => "Your game has been deleted 🎮"
   end
@@ -43,7 +51,7 @@ end
   private
 
   def game_params
-    params.require(:game).permit(:name, :label, :description)
+    params.require(:game).permit(:name, :label, :description, :image_link, :barcode)
   end
 
   def set_game
