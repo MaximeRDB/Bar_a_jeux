@@ -1,0 +1,17 @@
+<% @games.each do |game|%>
+  <div class="card-product">
+    <img src="https://cf.geekdo-images.com/BZiR636JJdSBwThtH42DVw__opengraph/img/_Iu_09Ab0fvnTJT3gBCfud0LbJg=/0x0:800x420/fit-in/1200x630/filters:strip_icc()/pic3744052.jpg" />
+    <div class="card-product-infos">
+
+        <h1><%= game.name %></h1>
+        <p>
+          <%=game.label%>
+          <%=game.description%>
+        </p>
+        <%= link_to 'More', game_path(game)%>
+        <%= link_to 'Edit', edit_game_path(game)%>
+    </div>
+  </div>
+<%end%>
+
+<%= link_to 'Add a new Game', new_game_path %>
