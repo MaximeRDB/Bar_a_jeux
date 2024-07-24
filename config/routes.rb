@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   root "games#index"
 
   resources :games, only: [:show, :edit, :update, :new, :create, :index, :destroy]
+
+  resources :bars, only: [:show, :index]
 end

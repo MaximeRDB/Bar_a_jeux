@@ -20,9 +20,9 @@ class GamesController < ApplicationController
     if game_params[:barcode].present?
      @game = Games::Creator.new(game_params[:barcode]).call
     else
-      @game = Game.new(game_params.compact!)
+      @game = Game.new(game_params)
     end
-
+    @game.name = 'Unknown Game Name' if @game.name.strip.blank?
     if @game.save!
       redirect_to @game
     else
