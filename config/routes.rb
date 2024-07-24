@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'bar_games/index'
   get 'bars/show'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   resources :games, only: [:show, :edit, :update, :new, :create, :index, :destroy]
 
   resources :bars, only: [:show, :index]
+
+  resources :bar_games, only: [:index]
 end

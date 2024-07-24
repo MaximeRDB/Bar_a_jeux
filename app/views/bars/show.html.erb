@@ -1,13 +1,17 @@
-<div class="card-product">
-  <img src="https://www.toulouse-tourisme.com/assets/uploads/sites/3/2023/12/terrasse-restaurant-toulouse.jpg" alt="">
-  <div class="card-product-infos">
-    <h1><%= @bar.name %></h1>
-    <p>
-      <%= @bar.description %>
-      <%= @bar.address %>
-      <%= @bar.phone_number %>
-      <%= @bar.number_of_tables %>
-      <%= @bar.number_of_seats %>
-    </p>
+<div class="bar_page">
+  <div class="card-product">
+    <img src="https://www.toulouse-tourisme.com/assets/uploads/sites/3/2023/12/terrasse-restaurant-toulouse.jpg" alt="">
+    <div class="card-product-infos">
+      <h1><%= @bar.name %></h1>
+      <p>
+        <%= @bar.description %>
+        <%= @bar.address %>
+        <%= @bar.phone_number %>
+        <%= @bar.number_of_tables %>
+        <%= @bar.number_of_seats %>
+
+        <%= link_to 'View games', bar_games_path(@bar_games)%>
+      </p>
+    </div>
   </div>
 </div>

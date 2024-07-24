@@ -1,17 +1,1 @@
-<div class="card-product">
-  <% src = @game.image_link ? @game.image_link : "https://cf.geekdo-images.com/BZiR636JJdSBwThtH42DVw__opengraph/img/_Iu_09Ab0fvnTJT3gBCfud0LbJg=/0x0:800x420/fit-in/1200x630/filters:strip_icc()/pic3744052.jpg"%>
-  <img src=<%= src %>>
-  <div class="card-product-infos">
-    <h1><%= @game.name %></h1>
-    <p>
-      <%= @game.description %>
-    </p>
-  </div>
-</div>
-
-<h2>Editing game</h2>
-
-
-<%= link_to 'Edit', edit_game_path %>
-<%= button_to('Destroy this game !?', @game, :method => :delete) %>
-<%= link_to 'all Games', games_path %>
+<%= render "shared/game_show", game: @game%>
