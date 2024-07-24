@@ -296,7 +296,7 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
   geocoder
-  importmap-rails
+  importmap-rails (~> 2.0.1)
   jbuilder
   money-rails (~> 1.12)
   nokogiri (~> 1.15, >= 1.15.4)
