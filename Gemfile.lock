@@ -131,7 +131,7 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
-    importmap-rails (2.0.1)
+    importmap-rails (1.2.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -151,6 +151,8 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapbox-gl-rails (2.9.0)
+      railties (>= 3.2)
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
@@ -296,8 +298,9 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
   geocoder
-  importmap-rails (~> 2.0.1)
+  importmap-rails (~> 1.2.3)
   jbuilder
+  mapbox-gl-rails (~> 2.9)
   money-rails (~> 1.12)
   nokogiri (~> 1.15, >= 1.15.4)
   pg (~> 1.1)
