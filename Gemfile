@@ -50,6 +50,9 @@ gem "bootsnap", require: false
 # gem geocoding lat/long
 gem "geocoder"
 
+# gem devise
+gem "devise"
+
 
 gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
