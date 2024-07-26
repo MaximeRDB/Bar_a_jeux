@@ -2,5 +2,5 @@
 <%= link_to 'Back to bar', :back%>
 
 <% @bargames.each do |bargame|%>
-  <%= render "shared/game_show", game: bargame.game%>
+  <%= render "shared/game_show", game: bargame.game, bar: bargame.bar %>
 <%end%>

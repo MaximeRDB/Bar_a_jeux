@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'bar_games/index'
   get 'bars/show'
 
@@ -9,11 +10,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "games#index"
+  root "bars#index"
 
   resources :games, only: [:show, :edit, :update, :new, :create, :index, :destroy]
 
-  resources :bars, only: [:show, :index]
+  resources :bars, only: [:show, :index], on: :members do
+    resources :bar_games, only: [:index]
+  end
 
-  resources :bar_games, only: [:index]
 end

@@ -6,8 +6,11 @@
     <p>
       <%= game.description %>
     </p>
-    <%= link_to 'Edit', edit_game_path(game) %>
-    <%= button_to('Destroy this game !?', game, :method => :delete) %>
-    <%= link_to 'all Games', games_path %>
+
+    <% if bar&.user == current_user%>
+      <%= link_to 'Edit', edit_game_path(game) %>
+      <%= button_to('Destroy this game !?', game, :method => :delete) %>
+    <%end%>
+
   </div>
 </div>
