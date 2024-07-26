@@ -13,7 +13,7 @@ class BarsController < ApplicationController
       {
         lat: bar.latitude,
         lng: bar.longitude,
-        # info_window_html: render_to_string(partial: "shared/info_window", locals: {bar: bar})
+        info_window_html: render_to_string(partial: "shared/info_window", locals: {bar: bar})
       }
     end
   end
