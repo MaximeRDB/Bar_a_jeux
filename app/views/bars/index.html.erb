@@ -1,23 +1,28 @@
-<div style="width: 100%; height: 600px;"
+<div
+  style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
+<div class="container-cards">
+  <% @bars.each do |bar| %>
+    <div class="bar_btn"><%= link_to bar_path(bar) do%>
 
-<% @bars.each do |bar| %>
-  <div class="card-product">
-    <img src="https://www.toulouse-tourisme.com/assets/uploads/sites/3/2023/12/terrasse-restaurant-toulouse.jpg" alt="">
-    <div class="card-product-infos">
-      <h1><%= bar.name %></h1>
-      <p>
-        <%= bar.description %>
-        <%= bar.address %>
-        <%= bar.phone_number %>
-        <%= bar.number_of_tables %>
-        <%= bar.number_of_seats %>
-      </p>
+      <div class="card-product">
+        <img src="https://www.toulouse-tourisme.com/assets/uploads/sites/3/2023/12/terrasse-restaurant-toulouse.jpg" alt="">
 
-      <%= link_to 'View this bar', bar_path(bar)%>
-    </div>
-  </div>
-<%end%>
+        <div class="card-product-infos">
+          <h1><%= bar.name %></h1>
+          <p>
+            <%= bar.description %> <br> <br>
+            <%= bar.address %> <br>
+            <%= bar.phone_number %> <br>
+            <%= bar.number_of_tables %> <br>
+            <%= bar.number_of_seats %>
+          </p>
+
+        </div>
+      </div>
+    <%end%> </div>
+  <%end%>
+</div>

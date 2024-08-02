@@ -3,7 +3,6 @@ class BarsController < ApplicationController
     before_action :set_bar, only: [:show]
 
   def show
-
   end
 
   def index
