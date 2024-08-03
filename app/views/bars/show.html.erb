@@ -1,17 +1,48 @@
-<div class="bar_page">
-  <div class="card-product">
-    <img src="https://www.toulouse-tourisme.com/assets/uploads/sites/3/2023/12/terrasse-restaurant-toulouse.jpg" alt="">
-    <div class="card-product-infos">
-      <h1><%= @bar.name %></h1>
-      <p>
-        <%= @bar.description %>
-        <%= @bar.address %>
-        <%= @bar.phone_number %>
-        <%= @bar.number_of_tables %>
-        <%= @bar.number_of_seats %>
+<div class="back_btn">
+  <%= link_to bars_path do %>
+    <%= image_tag "back.png" %>
+  <%end%>
+</div>
 
-        <%= link_to 'View games', bar_bar_games_path(@bar)%>
+<div class="banner">
+  <img src="https://www.toulouse-tourisme.com/assets/uploads/sites/3/2023/12/terrasse-restaurant-toulouse.jpg" alt="">
+</div>
+
+<h1 class="title_bar"><%= @bar.name %></h1>
+
+<div class="container_bar">
+  <div class="row">
+
+    <div class="description col-6">
+        <p>
+          SPECIAL EVENT <br>
+          🎲 Game pass <br>
+          🍺 Happy hour
+        </p>
+    </div>
+
+    <div class="description col-6">
+      <%= @bar.description %>
+    </div>
+
+  </div>
+</div>
+
+<div class="container_bar">
+  <div class="row">
+
+    <div class="description col-6">
+      <p>
+        <%= @bar.address %> <br>
+        <a href="tel:<%= @bar.phone_number %>", class="tel"><%= @bar.phone_number %></a> <br>
+        <%= @bar.number_of_tables %> <br>
+        <%= @bar.number_of_seats %>
       </p>
     </div>
+
+    <div class="description col-6">
+      <%= link_to 'View games', bar_bar_games_path(@bar), class:"btn"%>
+    </div>
+
   </div>
 </div>
