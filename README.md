@@ -1,1 +1,1 @@
-Application B.A.J is a BETA for Bars who like to be refered near by your position.
+Welcome to Application B.A.J, a beta service designed specifically for bars. This innovative platform aims to help bars get noticed and referred to by users based on their current location. Whether you're a bar owner looking to attract more customers or a user searching for nearby bars, Application B.A.J provides a seamless and efficient way to connect bars with potential patrons in their vicinity.
