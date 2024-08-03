@@ -1,3 +1,10 @@
+
+<div class="Add_game_btn">
+  <%= link_to new_game_path do %>
+    <%= image_tag "new_game.png" %>
+  <%end%>
+</div>
+
 <% @games.each do |game|%>
   <div class="card-product">
     <% src = game.image_link ? game.image_link : "https://cf.geekdo-images.com/BZiR636JJdSBwThtH42DVw__opengraph/img/_Iu_09Ab0fvnTJT3gBCfud0LbJg=/0x0:800x420/fit-in/1200x630/filters:strip_icc()/pic3744052.jpg"%>
@@ -14,5 +21,3 @@
     </div>
   </div>
 <%end%>
-
-<%= link_to 'Add a new Game', new_game_path %>

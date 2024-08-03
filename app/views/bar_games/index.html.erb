@@ -1,5 +1,9 @@
 
-<%= link_to 'Back to bar', :back%>
+<div class="back_btn">
+  <%= link_to :back do %>
+    <%= image_tag "back.png" %>
+  <%end%>
+</div>
 
 <% @bargames.each do |bargame|%>
   <%= render "shared/game_show", game: bargame.game, bar: bargame.bar %>
