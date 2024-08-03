@@ -1,4 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-
-bar = Bar.new name: "LaFete", address: "234 chemin de pascale", description: "petit bar qui ne paye pas de mine a premiere vue", phone_number: "0638982200"
-user = User.new first_name: "Lola", last_name: "Lestrange", email: "LolaLestrange@gmail.com"
+Welcome to Application B.A.J, a beta service designed specifically for bars. This innovative platform aims to help bars get noticed and referred to by users based on their current location. Whether you're a bar owner looking to attract more customers or a user searching for nearby bars, Application B.A.J provides a seamless and efficient way to connect bars with potential patrons in their vicinity.
